@@ -33,7 +33,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             archiveArtifacts 'LogTestFile.txt'
           }
@@ -42,5 +42,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    ChromeDriverPath = 'C:\\\\Driver\\\\Path\\\\ChromeDriver.exe'
   }
 }
