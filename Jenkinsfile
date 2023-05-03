@@ -2,9 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      when {
-        branch = 'main'
-      }
       parallel {
         stage('Build') {
           steps {
@@ -32,6 +29,9 @@ pipeline {
     }
 
     stage('Deploy') {
+      when {
+        branch 'master'
+      }
       parallel {
         stage('Deploy') {
           steps {
